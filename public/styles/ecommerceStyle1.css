@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Ropa+Sans');
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  vertical-align: top;
+  /* overflow: hidden; */
+}
+
+
+
+
+#masterContainer{
+  width: 100%;
+  min-height: 700px;
+  position: absolute;
+  background-color: rgb(252, 223, 29);
+  margin-top: 60px;
+  margin-bottom: 211px;
+}
+
+.top-btm-nav-colors{
+  background-color:#F9F871;
+}
+
+
+
+.leftNav{
+  min-height: 700px;
+  background-color: rgb(252, 223, 29);
+  border-right: 1px solid rgba(42, 41, 38, 0.56);
+  position: relative;
+  float: left;
+  width: 25%;
+  background-color: #FF9671;
+  padding: 10px;
+
+}
+
+
+.banner{
+  position: relative;
+  float: left;
+  padding: 10px;
+  width: 75%;
+  background-color: rgba(153, 159, 135, 0.69);
+}
+
+
+
+
+.product{
+  /* display: flex; */
+  /* align-items:center; */
+  /* justify-content: space-around; */
+  margin: 10px;
+  padding: 10px;
+  background-color: #FFC75F;
+  box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+}
+
+.product img{
+
+}
+.product a {
+  text-align: center;
+}
+
+.productView{
+  background-color: rgb(125, 134, 144);
+  float: left;
+  width: 100%;
+  padding: 25px;
+}
+
+
+.productData {
+
+  padding: 25px;
+  font-family: 'Ropa Sans', sans-serif;
+  float: left;
+  width: 25%;
+}
+
+.productDataInner{
+  background: orange;
+  padding: 10px;
+  box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+}
+
+
+.productPhotos {
+  padding: 25px;
+  font-family: 'Ropa Sans', sans-serif;
+  float: left;
+  width: 75%;
+}
+
+
+.innerProductPhotos{
+  background: orange;
+  padding: 10px;
+  box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+
+
+}
+.productPhotos img {
+width: 140px;
+border-radius: 20px;
+}
+
+.productDetails{
+  padding: 25px;
+
+}
+
+.innerProductDetails{
+    background: orange;
+  padding: 10px;
+  box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+}
+
+
+
+
+
+.addToCart{
+  display: inline;
+}
+
+.footer{
+
+}
