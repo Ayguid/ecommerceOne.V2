@@ -17,46 +17,57 @@ class User_Order_Controller extends Controller
     $this->middleware('auth');
   }
 
-  public static function cartToOrder(Request $request)
+  // public static function cartToOrder(Request $request)
+  // {
+  //   $cart = Cart::content();
+  //
+  //
+  //   if ($cart->count() > 0)
+  //   {
+  //
+  //     $user_order=new User_Order();
+  //     $user_order->user_id=Auth::user()->id;
+  //     $user_order->order_status_code='1';
+  //     $user_order->order_placed_datetime= new Carbon();;
+  //     $saveCart=$user_order->save();
+  //
+  //     foreach ($cart as $key => $cartItem)
+  //     {
+  //       $order_item= new Order_Item();
+  //       $order_item->product_id=$cartItem->id;
+  //       $order_item->item_order_quantity=$cartItem->qty;
+  //       $order_item->item_price=$cartItem->price;
+  //       $user_order->items()->save($order_item);
+  //     }
+  //     Cart::destroy();
+  //
+  //     if ($saveCart)
+  //     {
+  //
+  //       return redirect(route('shipping'));
+  //     }
+  //   }
+  //
+  //   else
+  //   {
+  //     return redirect(route('productListing'));
+  //   }
+  //
+  // }
+
+
+  public function showOrderData()
   {
-    $cart = Cart::content();
+    $data=[
 
-    // if (Auth::user() && ($cart->count() > 0))
-    if ($cart->count() > 0)
-    {
-      // $carbonDate=new Carbon();
-      $user_order=new User_Order();
-      $user_order->user_id=Auth::user()->id;
-      $user_order->order_status_code='1';
-      $user_order->order_placed_datetime= new Carbon();;
-      $saveCart=$user_order->save();
+    'cart'=>$cart = Cart::content(),
+    'user'=>$user= Auth::user()
+];
 
-      foreach ($cart as $key => $cartItem)
-      {
-        $order_item= new Order_Item();
-        $order_item->product_id=$cartItem->id;
-        $order_item->item_order_quantity=$cartItem->qty;
-        $order_item->item_price=$cartItem->price;
-        $user_order->items()->save($order_item);
-      }
-      Cart::destroy();
 
-      if ($saveCart)
-      {
-        // $request->session()->flash('alert-success', 'Updated Succesfully!');
-        return redirect(route('shipping'));
-      }
-    }
 
-    else
-    {
-      return redirect(route('productListing'));
-    }
-
+    return view('data-order')->with('data', $data);
   }
-
-
-
 
 
 

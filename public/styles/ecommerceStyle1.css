@@ -7,15 +7,30 @@
   box-sizing: border-box;
   vertical-align: top;
   /* overflow: hidden; */
+  /* overflow: hidden; */
 }
 
 
+table.order {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
 
+table.order td, table.order th {
+    border: 1px solid #b9aeae;
+    text-align: left;
+    padding: 8px;
+}
+
+table.order tr:nth-child(even) {
+    background-color: #b9aeae;
+}
 
 #masterContainer{
   width: 100%;
   min-height: 700px;
-  position: absolute;
+  overflow: hidden;
   background-color: rgb(252, 223, 29);
   margin-top: 60px;
   margin-bottom: 211px;
@@ -31,7 +46,6 @@
   min-height: 700px;
   background-color: rgb(252, 223, 29);
   border-right: 1px solid rgba(42, 41, 38, 0.56);
-  position: relative;
   float: left;
   width: 25%;
   background-color: #FF9671;
@@ -41,7 +55,6 @@
 
 
 .banner{
-  position: relative;
   float: left;
   padding: 10px;
   width: 75%;
@@ -132,6 +145,26 @@ border-radius: 20px;
 
 .addToCart{
   display: inline;
+}
+
+.orderDataCart{
+  padding: 10px;
+  width: 20%;
+  float: left;
+  overflow: hidden;
+}
+
+.userAddresses{
+  padding: 10px;
+  width: 75%;
+  float: left;
+  /* overflow: hidden; */
+}
+
+.billingAddress{
+  width: 50%;
+  padding: 10px;
+  float: left;
 }
 
 .footer{

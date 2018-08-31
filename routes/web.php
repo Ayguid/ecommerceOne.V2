@@ -107,6 +107,12 @@ Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logou
 
 
 
+//cart related
+Route::get('/clear-cart', 'CartController@clearCart')->name('clear-cart');
+Route::get('/users/show-order-data', 'User_Order_Controller@showOrderData')->name('order-data');
+
+
+
 //admin prefix
 Route::prefix('admin')->group(function()
 {

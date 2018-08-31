@@ -99,11 +99,12 @@
                         <li>Total <span>${{Cart::total()}}</span></li>
                         <li>Items <span>{{Cart::count()}}</span></li>
                     </ul>
-                    {{-- <a class="btn btn-default update" href="{{url('clear-cart')}}">Clear Cart</a>
-                    <a class="btn btn-default check_out" href="{{url('checkout')}}">Check Out</a> --}}
+                    <a class="btn btn-default update" href="{{route('clear-cart')}}">Clear Cart</a>
+                    <a class="btn btn-default check_out" href="{{route('order-data')}}">Check Out</a>
                 </div>
             </div>
         </div>
     </div>
 </section><!--/#do_action-->
+
 @endsection

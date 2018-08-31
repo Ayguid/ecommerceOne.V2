@@ -30,4 +30,13 @@ public function addressType()
 
 
 
+
+
+public function addressPretty()
+{
+  return $this->street .' '. $this->number .' '. $this->city .' '.$this->state ;
+}
+
+
+
 }
