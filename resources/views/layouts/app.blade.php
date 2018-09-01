@@ -76,6 +76,9 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                  
+                                      <a class="dropdown-item"  href="{{route('account')}}">My Account</a>
+
 
                                     {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> --}}
                                     <form id="logout-form" action="{{ route('user.logout') }}" method="GET" style="display: none;">
@@ -83,6 +86,7 @@
                                     </form>
                                 </div>
                             </li>
+
                         @endguest
 
                         <li class="nav-item nav-link"><a href="{{route('showCart')}}"><i class=" fa fa-shopping-cart" aria-hidden="true"><div id="cartCount" class="">{{Cart::count()}}</div> </i></a> </li>
@@ -92,6 +96,13 @@
             </div>
 
         </nav>
+
+
+        {{-- <li class="nav-item dropdown">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item"  href="{{route('account')}}">My Account</a>
+          </div>
+        </li> --}}
     <div id="masterContainer" class="masterContainer">
 
                     @yield('content')

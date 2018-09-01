@@ -38,7 +38,7 @@ class User_Order extends Model
 
   public function orderStatus()
   {
-    return $this->hasOne(Ref_Order_Status::class, 'order_status_code');
+    return $this->hasOne(Ref_Order_Status::class, 'order_status_code', 'order_status_code');
   }
 
 
@@ -65,7 +65,7 @@ class User_Order extends Model
   }
 
 
-  //functions 
+  //functions
   public function totalBill()
   { $products= $this->items;
     $total=0;

@@ -54,7 +54,7 @@
 
 
 // view helper rouutes
-Route::get('/', 'ViewHelperController@index');
+Route::get('/', 'ViewHelperController@index')->name('landing');
 Route::get('/category/{category?}', 'ViewHelperController@index')->name('indexProducts');
 Route::get('/product/{id}', 'ViewHelperController@index')->name('showProduct');
 
@@ -102,7 +102,7 @@ Route::post('/cart', 'CartController@cart')->name('addToCart');
 //creates auth routes for users
 Auth::routes();
 //user logged in
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/account', 'UserAccountController@index')->name('account');
 Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 
@@ -111,6 +111,15 @@ Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logou
 Route::get('/clear-cart', 'CartController@clearCart')->name('clear-cart');
 Route::get('/users/show-order-data', 'User_Order_Controller@showOrderData')->name('order-data');
 
+//address related
+Route::post('/users/show-order-data', 'PremiseController@saveAddress')->name('saveAddress');
+
+//order to database
+Route::post('/saveOrder', 'User_Order_Controller@cartToOrder')->name('cartToOrder');
+
+//user orders
+Route::get('/orders', 'User_Order_Controller@showOrders')->name('showOrders');
+Route::post('/orders', 'User_Order_Controller@deleteOrder')->name('deleteOrder');
 
 
 //admin prefix

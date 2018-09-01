@@ -9,6 +9,7 @@ use App\Stock_Item;
 use App\On_Sale;
 use Illuminate\Support\Facades\DB;
 use App\Ref_Product_Brand;
+use App\Order_Item;
 
 class Product extends Model
 {
@@ -54,6 +55,12 @@ class Product extends Model
   {
     return $this->hasOne(Ref_Product_Brand::class, 'product_brand_code', 'product_brand_code');
   }
+
+
+public function itemOrderQuantity()
+{
+  return $this->hasOne(Order_Item::class,  'product_id');
+}
 
 //functions
   public function discountPrice()

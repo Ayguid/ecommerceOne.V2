@@ -15,6 +15,14 @@ class CartController extends Controller
 {
 
 
+    public function showCart(Request $request )
+    {
+      $cart=self::cart($request);
+      return view('cart')->with('cart', $cart);
+    }
+
+
+
 
     public function cart(Request $request) {
 
@@ -69,11 +77,6 @@ class CartController extends Controller
 
 
 
-  public function showCart(Request $request )
-  {
-    $cart=self::cart($request);
-    return view('cart')->with('cart', $cart);
-  }
 
 
 
