@@ -61,6 +61,14 @@
 
               </tr>
             @endforeach
+            <tr>
+<td>
+
+            <p>
+              Order Total <span>${{Cart::total()}}</span>
+            </p>
+          </td>
+          </tr>
           @endif
         </tbody>
       </table>
@@ -71,7 +79,7 @@
 
   <div class="userAddresses">
     {{-- {{$data['user']->addresses}} --}}
-
+<button id="showAddressForm" class="centerBlockTranslate" type="text" name="addAddress">Add New Address</button>
 
 
   <div id="addressForm" class="addressForm" hidden >
@@ -327,7 +335,7 @@
 
     <div class="clearfix"></div>
 
-<button id="showAddressForm" class="centerBlockTranslate" type="text" name="addAddress">Add New Address</button>
+
 
   </div>
 
@@ -340,8 +348,11 @@ showAddressForm.addEventListener("click", function(){
   var addressForm = document.getElementById("addressForm");
   if (addressForm.hidden === false) {
        addressForm.hidden = true;
+       showAddressForm.innerHTML= 'Add New Address';
+
    } else {
        addressForm.hidden = false;
+       showAddressForm.innerHTML= 'Hide';
    }
  });
 

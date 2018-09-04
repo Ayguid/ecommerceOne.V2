@@ -64,12 +64,16 @@
     </div>
 </section> <!--/#cart_items-->
 
+
+
 <section id="do_action">
     <div class="container">
         <div class="heading">
             <h3>What would you like to do next?</h3>
             <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
         </div>
+
+
         <div class="row">
             <div class="col-sm-6">
                 <div class="chose_area">
@@ -92,6 +96,7 @@
                     {{-- <a class="btn btn-default check_out" href="{{route('cartToOrder')}}">Continue</a> --}}
                 </div>
             </div>
+
             <div class="col-sm-6">
                 <div class="total_area">
                     <ul>
@@ -99,11 +104,19 @@
                         <li>Total <span>${{Cart::total()}}</span></li>
                         <li>Items <span>{{Cart::count()}}</span></li>
                     </ul>
-                    <a class="btn btn-default update" href="{{route('clear-cart')}}">Clear Cart</a>
-                    <a class="btn btn-default check_out" href="{{route('order-data')}}">Check Out</a>
+
+
+                    @if (count($cart))
+                      <a class="btn btn-default update" href="{{route('clear-cart')}}">Clear Cart</a>
+                      <a class="btn btn-default check_out" href="{{route('order-data')}}">Check Out</a>
+                    @endif
                 </div>
             </div>
+
         </div>
+
+
+
     </div>
 </section><!--/#do_action-->
 

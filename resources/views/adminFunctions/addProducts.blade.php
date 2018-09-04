@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
-          <div class="card-header">Admin Home</div>
+          <div class="card-header">Add Product</div>
 
           <div class="card-body">
             @if(Session::has('alert-success'))
@@ -88,13 +88,14 @@
               </form>
 
             </div>
-            <a href="{{route('productListing')}}">Back to Products</a>
+            <a href="{{route('admin.dashboard')}}">Back to Dashboard</a>
             {{-- {{dd($errors)}} --}}
           </div>
         </div>
       </div>
     </div>
   </div>
+
 
 
 

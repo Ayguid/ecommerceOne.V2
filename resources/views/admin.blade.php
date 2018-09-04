@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Admin Home</div>
+                <div class="card-header">Admin DashBoard</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,7 +15,7 @@
                     @endif
 
                     <div class="showcase">
-                    @component('components.who')                      
+                    @component('components.adminPanel')
                     @endcomponent
                     </div>
 

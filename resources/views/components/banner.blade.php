@@ -15,10 +15,10 @@
 
   @isset($product->images)
     @foreach ($product->images as $image)
-      <img  src="{{asset('storage/uploads/Product_Photo/'.$image->image_path)}}" alt="">
+      <img width="15%"  src="{{asset('storage/uploads/Product_Photo/'.$image->image_path)}}" alt="">
     @endforeach
     @if(!$product->images->first())
-      <img  src="{{asset('storage/uploads/Product_Photo/default-product.jpg')}}" alt="">
+      <img   src="{{asset('storage/uploads/Product_Photo/default-product.jpg')}}" alt="">
     @endif
   @endisset
 

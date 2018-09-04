@@ -76,8 +76,12 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                  
+
                                       <a class="dropdown-item"  href="{{route('account')}}">My Account</a>
+
+                                      @if (Auth::guard('admin')->check())
+                                      <a class="dropdown-item"  href="{{route('admin.dashboard')}}">Admin Dashboard</a>
+                                      @endif
 
 
                                     {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> --}}

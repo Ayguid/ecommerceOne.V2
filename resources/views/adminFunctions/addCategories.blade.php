@@ -7,7 +7,7 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
-          <div class="card-header">Admin Home</div>
+          <div class="card-header">Add Category</div>
 
           <div class="card-body">
             @if(Session::has('alert-success'))
@@ -46,7 +46,7 @@
                 <input type="submit" name="" value="Submit">
               </form>
 
-              <a href="{{route('productListing')}}">Back to Products</a>
+              <a href="{{route('admin.dashboard')}}">Back to Dashboard</a>
             </div>
 
 
