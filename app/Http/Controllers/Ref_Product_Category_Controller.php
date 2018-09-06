@@ -15,108 +15,67 @@ class Ref_Product_Category_Controller extends Controller
   {
     $this->middleware('auth:admin');
   }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+
+
+
+  public function saveCategory(Request $request)
+  {
+    $input_validator = new Input_Validator();
+    if ($input_validator->validateCategory($request)->fails())
+    { $request->session()->flash('alert-danger', 'There was a problem adding your category!');
+      return redirect(route('admin.addCategories'))->withInput()->withErrors($input_validator->validateCategory( $request));
+    }
+    else
     {
-        //
+      $category= new Ref_Product_Category();
+      $category->product_category_description=$request->product_category_description;
+      $category->product_category_code =(Ref_Product_Category::lastCategory()->product_category_code)+(1);
+
+      if ($category->save())
+      {
+        $request->session()->flash('alert-success', 'Added Succesfully!');
+        return redirect(route('admin.addCategories'));
+      }
+    }
+  }
+
+
+  public function showCategoryForm($id)
+  {
+    $category=  Ref_Product_Category::find($id);
+    return view('adminFunctions.editCategoryForm')->with('category', $category);
+  }
+
+
+  public function update(Request $request)
+  {
+    // dd($request);
+    $category=  Ref_Product_Category::find($request->category_id);
+    $category->product_category_description = $request->product_category_description;
+    $input_validator = new Input_Validator();
+
+    if ($input_validator->validateCategory($request)->fails())
+    {
+      $request->session()->flash('alert-danger', 'There was a problem updating your category!');
+      return redirect(route('admin.showCategoryForm', $request->category_id))->withInput()->withErrors($input_validator->validateCategory( $request));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    if (!$input_validator->validateCategory($request)->fails())
     {
-        //
+      $category->update();
+      $request->session()->flash('alert-success', 'Updated Succesfully!');
+      return redirect(route('admin.addCategories'));
     }
+    // else if ($input_validator->validateCategory($request)->fails())
+    // {
+    //   $request->session()->flash('alert-danger', 'There was a problem updating your category!');
+    //   return view('adminFunctions.editCategoryForm')->withInput()->withErrors($input_validator->validateCategory( $request));
+    // }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  }
 
 
 
-    public function saveCategory(Request $request)
-    {
-        $input_validator = new Input_Validator();
-        if ($input_validator->validateCategory($request)->fails())
-        { $request->session()->flash('alert-danger', 'There was a problem adding your category!');
-          return redirect(route('admin.addCategories'))->withInput()->withErrors($input_validator->validateCategory( $request));
 
-        }
-        else{
-          $category= new Ref_Product_Category();
-          $category->product_category_description=$request->product_category_description;
-          $category->product_category_code =(Ref_Product_Category::lastCategory()->product_category_code)+(1);
-
-          if ($category->save()) {
-            $request->session()->flash('alert-success', 'Added Succesfully!');
-            return redirect(route('admin.addCategories'));
-          }
-          // else{
-          //   $request->session()->flash('alert-danger', 'There was a problem adding your category!');
-          //   return redirect(route('admin.addCategories'))->withInput()->withErrors($input_validator->validateCategory( $request));
-          // }
-
-        }
-
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

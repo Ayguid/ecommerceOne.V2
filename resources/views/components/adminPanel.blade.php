@@ -25,8 +25,8 @@ You are Logged In as a <strong>USER</strong>
 You are Logged In as a <strong>ADMIN</strong><br>
 
 <a href="{{route('admin.addProducts')}}">Add Product</a><br>
-<a href="{{route('admin.addCategories')}}">Add Category</a><br>
-<a href="{{route('admin.addBrands')}}">Add Brand</a><br><br>
+<a href="{{route('admin.addCategories')}}">Add/Edit Category</a><br>
+<a href="{{route('admin.addBrands')}}">Add/Edit Brand</a><br><br>
 <a href="{{route('admin.logout')}}">Log Out</a><br>
 {{-- <a href="{{route('admin.showProducts')}}">Show Products</a> --}}
 </p>

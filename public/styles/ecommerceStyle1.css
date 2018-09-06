@@ -29,7 +29,7 @@ table.order tr:nth-child(even) {
   margin-left: auto;
   margin-right: auto;
   display:block;
-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 
@@ -39,7 +39,7 @@ transform: translateX(-50%);
   overflow: hidden;
   background-color: rgb(252, 223, 29);
   margin-top: 60px;
-  margin-bottom: 211px;
+  margin-bottom: 111px;
 }
 
 .top-btm-nav-colors{

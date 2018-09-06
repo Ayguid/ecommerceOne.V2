@@ -30,7 +30,7 @@
           <li>
             <a href="#!">Link 1</a>
           </li>
-          <li>
+          {{-- <li>
             <a href="#!">Link 2</a>
           </li>
           <li>
@@ -38,7 +38,7 @@
           </li>
           <li>
             <a href="#!">Link 4</a>
-          </li>
+          </li> --}}
         </ul>
 
       </div>
@@ -54,7 +54,7 @@
           <li>
             <a href="#!">Link 1</a>
           </li>
-          <li>
+          {{-- <li>
             <a href="#!">Link 2</a>
           </li>
           <li>
@@ -62,7 +62,7 @@
           </li>
           <li>
             <a href="#!">Link 4</a>
-          </li>
+          </li> --}}
         </ul>
 
       </div>

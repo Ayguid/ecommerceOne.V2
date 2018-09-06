@@ -51,16 +51,17 @@
 
     <div class="productPhotos">
       <div class="innerProductPhotos">
+        {{-- {{dd($product->images)}} --}}
         @foreach ($product->images as  $image)
-          <img class="productPic" width="25%;" src="{{asset('storage/uploads/Product_Photo/'.$image->image_path)}}" alt="">
+          <img class="productPic" width="" src="{{asset('storage/uploads/Product_Photo/'.$image->image_path)}}" alt="">
           {{-- <img class="productPic" src="{{$image->image_path}}" alt=""> --}}
         @endforeach
       </div>
     </div>
 
-    @if (!$product->images->first())
+    {{-- @if (!$product->images->first())
       <img width="25%;" src="{{asset('storage/uploads/Product_Photo/default-product.jpg')}}" alt=""><br>
-    @endif
+    @endif --}}
     <br>
     <div class="clearfix">
 

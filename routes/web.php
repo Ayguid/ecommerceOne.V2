@@ -145,6 +145,16 @@ Route::prefix('admin')->group(function()
   //individual objects controllers save updates and stuff
   Route::post('addProducts/{token?}', 'ProductController@saveProduct')->name('admin.addedProduct');
   Route::post('editProducts/{id}', 'ProductController@update')->name('admin.updateProduct');
-  Route::post('addCategories/{token?}', 'Ref_Product_Category_Controller@saveCategory')->name('admin.saveCategory');
-  Route::post('addBrand/{token?}', 'Ref_Product_Brand_Controller@saveBrand')->name('admin.saveBrand');
+
+
+
+  Route::get('showCategoryForm/{id}', 'Ref_Product_Category_Controller@showCategoryForm')->name('admin.showCategoryForm');
+  Route::post('addCategories/', 'Ref_Product_Category_Controller@saveCategory')->name('admin.saveCategory');
+  Route::post('updateCategory/', 'Ref_Product_Category_Controller@update')->name('admin.updateCategory');
+
+  Route::get('showBrandForm/{id}', 'Ref_Product_Brand_Controller@show')->name('admin.showBrandForm');
+  Route::post('addBrand/', 'Ref_Product_Brand_Controller@saveBrand')->name('admin.saveBrand');
+
+
+
 });

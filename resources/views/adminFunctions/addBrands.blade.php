@@ -3,6 +3,13 @@
 
 @section('content')
 
+
+
+
+
+
+
+
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
@@ -16,6 +23,8 @@
             @if(Session::has('alert-danger'))
               <div class="alert alert-danger"><i class="fa fa-times" aria-hidden="true"></i> <strong>{!! session('alert-danger') !!}</strong></div>
             @endif
+
+
             {{-- @if($errors->any())
               <h4>{{$errors->first()}}</h4>
             @endif --}}
@@ -23,8 +32,8 @@
             <div class="showcase">
               @isset($brands)
                 <ul>
-                  @foreach ($brands as $key => $value)
-                    <li>{{$value->product_brand_name}}&nbsp &nbsp<a href="#">edit</a></li>
+                  @foreach ($brands as $key => $brand)
+                    <li>{{$brand->product_brand_name}}&nbsp &nbsp<a href="{{route('admin.showBrandForm', $brand->id)}}">edit</a></li>
                   @endforeach
                   <br>
                   <br>

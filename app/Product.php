@@ -50,19 +50,19 @@ class Product extends Model
   }
 
 
-
+  
   public function brand()
   {
     return $this->hasOne(Ref_Product_Brand::class, 'product_brand_code', 'product_brand_code');
   }
 
 
-public function itemOrderQuantity()
-{
-  return $this->hasOne(Order_Item::class,  'product_id');
-}
+  public function itemOrderQuantity()
+  {
+    return $this->hasOne(Order_Item::class,  'product_id');
+  }
 
-//functions
+  //functions
   public function discountPrice()
 
   {
